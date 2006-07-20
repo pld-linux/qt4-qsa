@@ -13,8 +13,8 @@ Group:		X11/Libraries
 Source0:	ftp://ftp.trolltech.com/qsa/source/qsa-x11-opensource-%{version}.tar.gz
 # Source0-md5:	46a05bb09346b04cf470dd1a3778c9a0
 URL:		http://www.trolltech.com/products/qsa/index.html
-BuildRequires:	qmake
 BuildRequires:	QtCore-devel
+BuildRequires:	qmake
 Requires:	QtCore
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -78,17 +78,19 @@ export PATH=$QTBINDIR:$PATH
 export QTINC=%{_includedir}/qt4
 export QTLIB=%{_libdir}
 ./configure -release -prefix %{_prefix}
-make -e INSTALL_ROOT=$RPM_BUILD_ROOT
+%{__make} -e \
+	INSTALL_ROOT=$RPM_BUILD_ROOT
 
 %install
 rm -rf $RPM_BUILD_ROOT
 
 install -d $RPM_BUILD_ROOT%{_datadir}/qt4
 install -d $RPM_BUILD_ROOT%{_includedir}/qt4
-install -d $RPM_BUILD_ROOT%{_examplesdir}/%{name}
+install -d $RPM_BUILD_ROOT%{_examplesdir}/%{name}-%{version}
 install -d $RPM_BUILD_ROOT%{_defaultdocdir}/qsa
 
-make -e INSTALL_ROOT=$RPM_BUILD_ROOT install
+%{__make} install -e \
+	INSTALL_ROOT=$RPM_BUILD_ROOT
 
 mv $RPM_BUILD_ROOT%{_prefix}/doc/html $RPM_BUILD_ROOT%{_defaultdocdir}/qsa
 rm -rf $RPM_BUILD_ROOT%{_prefix}/doc
@@ -96,9 +98,9 @@ rm -rf $RPM_BUILD_ROOT%{_prefix}/doc
 #
 # Examples
 #
-cp -a examples/* $RPM_BUILD_ROOT%{_examplesdir}/%{name}
+cp -a examples/* $RPM_BUILD_ROOT%{_examplesdir}/%{name}-%{version}
 
-cd $RPM_BUILD_ROOT%{_examplesdir}/%{name}
+cd $RPM_BUILD_ROOT%{_examplesdir}/%{name}-%{version}
 #remove uneeded files
 rm -f qsa.prf
 find . -name "Makefile.*" | xargs rm -f
