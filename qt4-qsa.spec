@@ -87,12 +87,12 @@ rm -rf $RPM_BUILD_ROOT
 install -d $RPM_BUILD_ROOT%{_datadir}/qt4
 install -d $RPM_BUILD_ROOT%{_includedir}/qt4
 install -d $RPM_BUILD_ROOT%{_examplesdir}/%{name}-%{version}
-install -d $RPM_BUILD_ROOT%{_defaultdocdir}/qsa
+install -d $RPM_BUILD_ROOT%{_docdir}/qsa
 
 %{__make} install -e \
 	INSTALL_ROOT=$RPM_BUILD_ROOT
 
-mv $RPM_BUILD_ROOT%{_prefix}/doc/html $RPM_BUILD_ROOT%{_defaultdocdir}/qsa
+mv $RPM_BUILD_ROOT%{_prefix}/doc/html $RPM_BUILD_ROOT%{_docdir}/qsa
 rm -rf $RPM_BUILD_ROOT%{_prefix}/doc
 
 #
@@ -118,8 +118,8 @@ cd -
 # Includes
 #
 mv $RPM_BUILD_ROOT%{_includedir}/*.h $RPM_BUILD_ROOT%{_includedir}/qt4
-install -p -m 644 src/ide/qsworkbench.h $RPM_BUILD_ROOT%{_includedir}/qt4
-install -p -m 644 src/qsa/qsutilfactory.h $RPM_BUILD_ROOT%{_includedir}/qt4
+install -p src/ide/qsworkbench.h $RPM_BUILD_ROOT%{_includedir}/qt4
+install -p src/qsa/qsutilfactory.h $RPM_BUILD_ROOT%{_includedir}/qt4
 
 #
 # mkspecs
@@ -161,9 +161,9 @@ rm -rf $RPM_BUILD_ROOT
 
 %files doc
 %defattr(644,root,root,755)
-%dir %{_defaultdocdir}/qsa
-%dir %{_defaultdocdir}/qsa/html
-%{_defaultdocdir}/qsa/html/*
+%dir %{_docdir}/qsa
+%dir %{_docdir}/qsa/html
+%{_docdir}/qsa/html/*
 
 %files devel
 %defattr(644,root,root,755)
