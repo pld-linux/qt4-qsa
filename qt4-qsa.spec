@@ -7,14 +7,14 @@ Summary:	Qt Script for Applications
 Summary(pl):	Qt Script for Applications - jêzyk skryptowy dla aplikacji Qt
 Name:		qt4-qsa
 Version:	1.2.1
-Release:	0.1
+Release:	1
 License:	GPL v2
 Group:		X11/Libraries
 Source0:	ftp://ftp.trolltech.com/qsa/source/qsa-x11-opensource-%{version}.tar.gz
 # Source0-md5:	46a05bb09346b04cf470dd1a3778c9a0
 URL:		http://www.trolltech.com/products/qsa/index.html
 BuildRequires:	QtCore-devel
-BuildRequires:	qmake
+BuildRequires:	qt4-qmake
 Requires:	QtCore
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -47,7 +47,7 @@ Summary:	QSA - header files
 Summary(pl):	QSA - pliki nag³ówkowe
 Group:		X11/Libraries
 Requires:	%{name} = %{version}-%{release}
-Requires:	qt-devel
+Requires:	QtCore-devel
 
 %description devel
 Header files for applications using Qt Script.
@@ -59,8 +59,6 @@ Pliki nag³ówkowe dla aplikacji wykorzystuj±cych Qt Script.
 Summary:	QSA - examples for developers
 Summary(pl):	QSA - przyk³adowe programy dla programistów
 Group:		X11/Libraries
-Requires:	%{name}-devel = %{version}-%{release}
-Requires:	qt-devel
 
 %description examples
 Examples of Qt Script usage for developers.
