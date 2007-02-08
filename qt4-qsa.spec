@@ -1,8 +1,6 @@
-
-#TODO:
+# TODO:
 #	- coexistence qt4-qsa with qsa
 #	- pkgconfig for qt4-qsa
-
 Summary:	Qt Script for Applications
 Summary(pl):	Qt Script for Applications - jêzyk skryptowy dla aplikacji Qt
 Name:		qt4-qsa
@@ -68,7 +66,7 @@ Przyk³adowe sposoby wykorzystania Qt Script dla programistów.
 
 %prep
 %setup -q -n qsa-x11-opensource-%{version}
-sed -r -i -e "s:INSTALL_PREFIX/lib:INSTALL_PREFIX/%{_lib}:g" src/qsa/qsa.pro
+sed -i -e "s:INSTALL_PREFIX/lib:INSTALL_PREFIX/%{_lib}:g" src/qsa/qsa.pro
 
 %build
 QTBINDIR=%{_libdir}/qt4/bin
