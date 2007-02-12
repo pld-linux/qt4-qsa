@@ -2,7 +2,7 @@
 #	- coexistence qt4-qsa with qsa
 #	- pkgconfig for qt4-qsa
 Summary:	Qt Script for Applications
-Summary(pl.UTF-8):   Qt Script for Applications - język skryptowy dla aplikacji Qt
+Summary(pl.UTF-8):	Qt Script for Applications - język skryptowy dla aplikacji Qt
 Name:		qt4-qsa
 Version:	1.2.2
 Release:	1
@@ -30,7 +30,7 @@ języka Qt Script (opartego o ECMAScript/JavaScript).
 
 %package doc
 Summary:	Documentation for QSA
-Summary(pl.UTF-8):   Dokumentacja dla QSA
+Summary(pl.UTF-8):	Dokumentacja dla QSA
 Group:		Documentation
 Requires:	%{name} = %{version}-%{release}
 
@@ -42,7 +42,7 @@ Dokumentacja do Qt Script w formacie HTML.
 
 %package devel
 Summary:	QSA - header files
-Summary(pl.UTF-8):   QSA - pliki nagłówkowe
+Summary(pl.UTF-8):	QSA - pliki nagłówkowe
 Group:		X11/Libraries
 Requires:	%{name} = %{version}-%{release}
 Requires:	QtCore-devel
@@ -55,7 +55,7 @@ Pliki nagłówkowe dla aplikacji wykorzystujących Qt Script.
 
 %package examples
 Summary:	QSA - examples for developers
-Summary(pl.UTF-8):   QSA - przykładowe programy dla programistów
+Summary(pl.UTF-8):	QSA - przykładowe programy dla programistów
 Group:		X11/Libraries
 
 %description examples
