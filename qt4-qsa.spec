@@ -4,12 +4,12 @@
 Summary:	Qt Script for Applications
 Summary(pl.UTF-8):	Qt Script for Applications - język skryptowy dla aplikacji Qt
 Name:		qt4-qsa
-Version:	1.2.2
+Version:	1.2.3
 Release:	1
 License:	GPL v2
 Group:		X11/Libraries
 Source0:	ftp://ftp.trolltech.com/qsa/source/qsa-x11-opensource-%{version}.tar.gz
-# Source0-md5:	827920185d5a9cab3ef14a6fe2d157d0
+# Source0-md5:	c7a43414eeae28e0864afc1caa638b30
 URL:		http://www.trolltech.com/products/qsa/index.html
 BuildRequires:	QtCore-devel
 BuildRequires:	qt4-qmake
