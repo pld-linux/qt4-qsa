@@ -12,6 +12,7 @@ Source0:	ftp://ftp.trolltech.com/qsa/source/qsa-x11-opensource-%{version}.tar.gz
 # Source0-md5:	c7a43414eeae28e0864afc1caa638b30
 URL:		http://www.trolltech.com/products/qsa/index.html
 BuildRequires:	QtCore-devel
+BuildRequires:	qt4-build
 BuildRequires:	qt4-qmake
 Requires:	QtCore
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
